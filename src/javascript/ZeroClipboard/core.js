@@ -34,7 +34,16 @@ var _globalConfig = {
   // How many milliseconds to wait for the Flash SWF to load and respond before assuming that
   // Flash is deactivated (e.g. click-to-play) in the user's browser. If you don't care about
   // how long it takes to load the SWF, you can set this to `null`.
-  flashLoadTimeout: 30000
+  flashLoadTimeout: 30000,
+
+  // Sets the id of the the `div` encapsulating the Flash object
+  containerId: "global-zeroclipboard-html-bridge",
+
+  // Sets the class of the the `div` encapsulating the Flash object
+  containerClass: "global-zeroclipboard-container",
+
+  // Sets the id and name of the Flash 'object' element
+  flashBridgeName: "global-zeroclipboard-flash-bridge"
 
 };
 
