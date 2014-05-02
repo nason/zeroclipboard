@@ -7,7 +7,7 @@
   // Helper functions
   var TestUtils = {
     getHtmlBridge: function() {
-      return document.getElementById("global-zeroclipboard-html-bridge");
+      return document.getElementById(ZeroClipboard.config('containerId'));
     }
   };
 
@@ -516,13 +516,13 @@
 
     // Assert, arrange, assert, act, assert
     assert.ok(!ZeroClipboard.prototype._singleton, "The client singleton does not exist before creating a client");
-    assert.equal(document.getElementById("global-zeroclipboard-html-bridge"), null, "The HTML bridge does not exist before creating a client");
+    assert.equal(document.getElementById(ZeroClipboard.config('containerId')), null, "The HTML bridge does not exist before creating a client");
     var client = new ZeroClipboard();
     assert.ok(!ZeroClipboard.prototype._singleton, "The client singleton does exist after creating a client");
-    assert.notEqual(document.getElementById("global-zeroclipboard-html-bridge"), null, "The HTML bridge does exist after creating a client");
+    assert.notEqual(document.getElementById(ZeroClipboard.config('containerId')), null, "The HTML bridge does exist after creating a client");
     ZeroClipboard.destroy();
     assert.ok(!ZeroClipboard.prototype._singleton, "The client singleton does not exist after calling `destroy`");
-    assert.equal(document.getElementById("global-zeroclipboard-html-bridge"), null, "The HTML bridge does not exist after calling `destroy`");
+    assert.equal(document.getElementById(ZeroClipboard.config('containerId')), null, "The HTML bridge does not exist after calling `destroy`");
   });
 
 

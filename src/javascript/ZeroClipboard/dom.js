@@ -7,7 +7,7 @@ var _bridge = function () {
   var flashBridge, len;
 
   // try and find the current global bridge
-  var container = document.getElementById("global-zeroclipboard-html-bridge");
+  var container = document.getElementById(_globalConfig.containerId);
 
   if (!container) {
     // Set `allowScriptAccess`/`allowNetworking` based on `trustedDomains` and `window.location.host` vs. `swfPath`
@@ -86,8 +86,8 @@ var _bridge = function () {
  */
 var _createHtmlBridge = function() {
   var container = document.createElement("div");
-  container.id = "global-zeroclipboard-html-bridge";
-  container.className = "global-zeroclipboard-container";
+  container.id = _globalConfig.containerId;
+  container.className = _globalConfig.containerClass;
   container.style.position = "absolute";
   container.style.left = "0px";
   container.style.top = "-9999px";
